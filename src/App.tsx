@@ -4,11 +4,17 @@ import Box from './components/Box';
 
 function App(): JSX.Element {
   const [activeColor, setActiveColor] = useState('#FFFFFF');
+  const [history, setHistory] = useState<unknown[]>([]);
+
+  const handleClickHistory = (newStuff: unknown) => {
+    setHistory([...history, newStuff])
+  }
+
   return (
     <div className="App">
-      <Box clickColor={activeColor} />
-      <Box clickColor={activeColor} />
-      <Box clickColor={activeColor} />
+      <Box historyCallback={handleClickHistory} clickColor={activeColor} />
+      <Box historyCallback={handleClickHistory} clickColor={activeColor} />
+      <Box historyCallback={handleClickHistory} clickColor={activeColor} />
       <input
         type="color"
         value={activeColor}
