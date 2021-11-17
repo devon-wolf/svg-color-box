@@ -1,3 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+}
+
+.box {
+  height: 300px;
+  width: 300px;
+  border: solid 4px black;
+  margin: 1rem;
 }
